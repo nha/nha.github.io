@@ -107,17 +107,23 @@ See : map vs pmap, STM
 
 Clojure is a young language, but the community is very active.
 There are Clojure editors/IDEs, libraries, tutorials, StackOverflow questions...
-And even a few libraries that have no equivalent elsewhere :
-   - Onyx:  distributed computing
+
+And even libraries that have no equivalent elsewhere :
+   - Onyx: distributed computing
    - Om: structure an interface (web, mobile)
    - Figwheel: reload your frontend code, style... without loosing the current state !
-   - Datomic: a database written in Clojure for Clojure by Rich, creator of Clojure. Datomic too is immutable
+   - Datomic: immutable database (by Rich Hickey, creator of Clojure, written in Clojure, with scalable reads and consistent writes)
    - Bidi/Yada: bidirectional routing and fully asynchronous web server
-   - Incanter: R-like data processing
-   - boot: build tooling, that treats files as an immutable value.
+   - Incanter: R-like data processing and visualization
+   - boot: build tooling, that treats file-systems as an immutable value
    - core.logic: logic programming in Clojure
    - core.async: asynchronous CSP-style programming
-See https://github.com/razum2um/awesome-clojure
+
+And some promising future ones:
+   - lambda.cd: Continuous integration as code
+   - http://www.robots.ox.ac.uk/~fwood/anglican/
+   - http://www.quilt.org/
+See also https://github.com/razum2um/awesome-clojure
 
 ** One language to rule them all
 
@@ -130,7 +136,6 @@ So, you get a language that rocks and reaches every platform.
 
 ** Conclusion
 
-Don't take my word for it though !
 If it is good enough for those people, it is good enough for me :
 - http://thecleancoder.blogspot.fr/2010/08/why-clojure.html (aka. Uncle Bob)
 - ThoughtWorks tech radar: in Adopt since 2012 (Martin Fowler blogs about it sometimes)
@@ -138,6 +143,10 @@ If it is good enough for those people, it is good enough for me :
 
 Play with it, hate it, love it ! It will make you a better programmer anyway.
 Me, I'm not going back.
+
+"People say that C lets you write fast programs by default.
+Well, Clojure lets you write concurrent programs by default."
+                         David Nolen (co-author of ClojureScript)
 
 * Why NOT Clojure
 
@@ -155,4 +164,4 @@ If you need super stable libraries whose interface will not change in the next 1
 ** Static typing
 Clojure is a dynamically, strongly typed language.
 I would personally welcome an optional static typing, something like what exists in Racket, Shen, or Lux.
-We have core.typed (optional static typing) on the way. There is also cats (category theory), prismatic/schema (most popular, schema validation).
+We have core.typed (optional static typing) on the way. Somehow related, tghere is also cats (category theory), prismatic/schema (most popular, schema validation).
