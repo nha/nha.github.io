@@ -109,15 +109,16 @@ Clojure is a young language, but the community is very active.
 There are Clojure editors/IDEs, libraries, tutorials, StackOverflow questions...
 
 And even libraries that have no equivalent elsewhere :
-   - Onyx: distributed computing
-   - Om: structure an interface (web, mobile)
-   - Figwheel: reload your frontend code, style... without loosing the current state !
-   - Datomic: immutable database (by Rich Hickey, creator of Clojure, written in Clojure, with scalable reads and consistent writes)
-   - Bidi/Yada: bidirectional routing and fully asynchronous web server
-   - Incanter: R-like data processing and visualization
-   - boot: build tooling, that treats file-systems as an immutable value
-   - core.logic: logic programming in Clojure
-   - core.async: asynchronous CSP-style programming
+   - [Onyx](https://github.com/onyx-platform/onyx): distributed computing
+   - [Om](https://github.com/omcljs/om): structure an interface (web, mobile)
+   - [Figwheel](https://github.com/bhauman/lein-figwheel)/[Devcards](https://github.com/bhauman/devcards): reload your frontend code, style... without loosing the current state !
+   - [Datomic](http://www.cognitect.com/datomic): immutable database (by Rich Hickey, creator of Clojure, written in Clojure, with scalable reads and consistent writes)
+   - [Bidi](https://github.com/juxt/bidi)/[Yada](https://github.com/juxt/yada): bidirectional routing and fully asynchronous web server
+   - [boot](https://github.com/boot-clj/boot): build tooling, that treats file-systems as an immutable value
+   - [core.logic](https://github.com/clojure/core.logic): logic programming in Clojure
+   - [core.async](https://clojure.github.io/core.async/): asynchronous CSP-style programming
+   - [Incanter](https://github.com/incanter/incanter): R-like data processing and visualization
+   - [metabase](https://github.com/metabase/metabase): easy analytics for everyone
 
 And some promising future ones:
    - lambda.cd: Continuous integration as code
