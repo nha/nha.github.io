@@ -1,4 +1,4 @@
-Why Clojure ?
+Why Clojure?
 
 Clojure is a general-purpose programming language. With a strong emphasis on simplicity, functional programming and performance.
 
@@ -6,21 +6,21 @@ Clojure is about:
 
 * Immutability and State
 
-Let's take a sample code in, say, Java :
+Let's take a sample code in, say, Java:
 
 ```
 AClass[] array = {object1, object2, ...};
 anotherObject.aFunction(array);
-// what is the value of array now ?
+// what is the value of array now?
 ```
 
-What is the value of `array` now ? Take a minute to think about it.
+What is the value of `array` now? Take a minute to think about it.
 
 We don't know !
 Two simple lines of code, and already there are no guarantees.
 
-What happens if we call `anotherObject.aFunction(array);` again ?
-Would it be the same as the first time ?
+What happens if we call `anotherObject.aFunction(array);` again?
+Would it be the same as the first time?
 Again, no guarantees.
 
 Clojure solves this problem by having objects that do not change by default.
@@ -29,13 +29,13 @@ And all of those are meaningful, and represent something you can reason about.
 It make a whole category of bugs disappear.
 All the ones where you have to think like: "Soo... the value of `a` was "such and such", when the value of `b` was "something something", but then the value of `a` changed to "some horrible thing" and therefore...")
 
-By the way, did writing `x = x + 1` never ever bothered you ?
+By the way, did writing `x = x + 1` never ever bothered you?
 
 * REPL
 
 This is a very pleasant way to evaluate code as you write it.
 It really shorten the feedback cycle. No more write/compile/test or write/restart.
-Just write/call, see the result instantly in your editor. That's it !
+Just write/call, see the result instantly in your editor. That's it!
 Once tasted, there is no going back.
 See https://github.com/clojure-emacs/cider#enlighten-display-local-values
 
@@ -43,7 +43,7 @@ See https://github.com/clojure-emacs/cider#enlighten-display-local-values
 
 Calling Java code from Clojure is as simple as calling Java.
 
-Examples :
+Examples:
 
 // Java
 "Let's synergize our bleeding edges".indexOf("y") // => 7
@@ -64,19 +64,19 @@ Space shuttles were debugged remotely using Lisp (http://www.flownet.com/gat/jpl
 
 It may look like alien technology for a C programmer, but there are simple and powerful principles guiding the languages of the Lisp family.
 
-In particular, the Clojure community favours :
+In particular, the Clojure community favors:
  - explicit over implicit
- - state management
+ - managing state over hiding it
 
-*...But what about ?
+...But what about...?
 
-** Performance ?
+** Performance?
 
 Let's talk about a program execution time.
 A common misconception about programming languages are that in order for a program to be performant, it has to be written in some kind of low-level/close to the metal language.
 While it may be true in an absolute sense, most of the time this assumption doesn't hold (except if you have an infinite development time).
 
-Why ?
+Why?
 
 If I write a program in assembly, it will probably be slower than an equivalent program I write in C.
 Because there are a lot of optimization tricks that C compilers will do.
@@ -84,15 +84,15 @@ Plus, it will probably be faster to write in C than in assembly. And it will run
 So, my time is better spend learning C than learning assembly tricks.
 
 Same story between C/C++ and Java (if I don't consider the JVM startup time).
-Long story short : the JVM (Java Virtual Machine) includes a JIT (Just In Time compiler).
+Long story short: the JVM (Java Virtual Machine) includes a JIT (Just In Time compiler).
 That is, it looks at the program while it is running, and optimizes based on the actual data/hardware.
 See http://stackoverflow.com/q/145110/1327651 for details.
 
 Same story between Clojure and Java.
 Even if Clojure is written in Java, because of the way the language is designed, it has more information about it's components.
-Remember that things are immutable ? That can be leveraged to increase performance a lot in concurrent/parallel environments since there is no need for locking to share them.
+Remember that things are immutable? That can be leveraged to increase performance a lot in concurrent/parallel environments since there is no need for locking to share them.
 
-That means in practice that is is really easy to :
+That means in practice that is is really easy to:
  - write a program as a single-threaded program
  - turn it into a multi-thread program with minimal changes
 
@@ -100,27 +100,26 @@ Since the increased power of current processors is split into an increasing numb
 being able to use them all is becoming increasingly important.
 
 Clojure makes concurrency easy.
-Real-life example ? Http-Kit is a webserver written in Clojure and Java, and runs 600K concurrent connections.
-See : map vs pmap, STM
+Real-life example? Http-Kit is a webserver written in Clojure and Java, and runs 600K concurrent connections.
+See: map vs pmap, STM
 
 ** the Ecosystem
 
 Clojure is a young language, but the community is very active.
 There are Clojure editors/IDEs, libraries, tutorials, StackOverflow questions...
 
-And even libraries that have no equivalent elsewhere :
+And even libraries that have no equivalent elsewhere:
    - [Onyx](https://github.com/onyx-platform/onyx): distributed computing
    - [Om](https://github.com/omcljs/om): structure an interface (web, mobile)
-   - [Figwheel](https://github.com/bhauman/lein-figwheel)/[Devcards](https://github.com/bhauman/devcards): reload your frontend code, style... without loosing the current state !
+   - [Figwheel](https://github.com/bhauman/lein-figwheel)/[Devcards](https://github.com/bhauman/devcards): reload your frontend code, style... without loosing the current state!
    - [Datomic](http://www.cognitect.com/datomic): immutable database (by Rich Hickey, creator of Clojure, written in Clojure, with scalable reads and consistent writes)
    - [Bidi](https://github.com/juxt/bidi)/[Yada](https://github.com/juxt/yada): bidirectional routing and fully asynchronous web server
    - [boot](https://github.com/boot-clj/boot): build tooling, that treats file-systems as an immutable value
    - [core.logic](https://github.com/clojure/core.logic): logic programming in Clojure
    - [core.async](https://clojure.github.io/core.async/): asynchronous CSP-style programming
-   - [Incanter](https://github.com/incanter/incanter): R-like data processing and visualization
-   - [metabase](https://github.com/metabase/metabase): easy analytics for everyone
+   - [clojure.spec](http://clojure.org/about/spec): a specification system for functions and data in Clojure
 
-And some promising future ones:
+And some promising future ones (I have yet to play with those):
    - lambda.cd: Continuous integration as code
    - http://www.robots.ox.ac.uk/~fwood/anglican/
    - http://www.quilt.org/
@@ -137,12 +136,12 @@ So, you get a language that rocks and reaches every platform.
 
 ** Conclusion
 
-If it is good enough for those people, it is good enough for me :
+If it is good enough for those people, it is good enough for me:
 - http://thecleancoder.blogspot.fr/2010/08/why-clojure.html (aka. Uncle Bob)
 - ThoughtWorks tech radar: in Adopt since 2012 (Martin Fowler blogs about it sometimes)
 - Companies using it: http://clojure.org/community/companies
 
-Play with it, hate it, love it ! It will make you a better programmer anyway.
+Play with it, hate it, love it! It will make you a better programmer anyway
 Me, I'm not going back.
 
 "People say that C lets you write fast programs by default.
@@ -151,18 +150,21 @@ Well, Clojure lets you write concurrent programs by default."
 
 * Why NOT Clojure
 
-** Comprehensive error messages
-The Clojure compiler throws errors that are hard to understand.
-
 ** Hiring
-Clojure is not a mainstream language (yet).
-So hiring programmers may not be an easy task.
-Some people view it as an advantage though, since Clojure programmers are generally better programmers, and good programmers are usually excited by new languages.
+Clojure is not a mainstream language (yet - it has been slowly growing for years).
+So hiring programmers may not be an easy task. Although I feel that more people would like to use it professionally than there are jobs available.
+Some recruiters view it as an advantage though, since Clojure programmers are generally good programmers, curious and able to learn new things by themselves.
 
 ** Stable libraries
 If you need super stable libraries whose interface will not change in the next 10 years, stick with COBOL, C, JAVA.
 
 ** Static typing
 Clojure is a dynamically, strongly typed language.
-I would personally welcome an optional static typing, something like what exists in Racket, Shen, or Lux.
-We have core.typed (optional static typing) on the way. Somehow related, tghere is also cats (category theory), prismatic/schema (most popular, schema validation).
+I would personally welcome an optional static typing, something like what exists in Haskell/Racket/Shen/Lux and others.
+But we have:
+- core.typed, optional static typing library on the way
+- funcool/cats, a category theory library
+- clojure.spec are specifications for functions and data that allows verification, coercion, and generative testing to be written in Clojure
+
+** Comprehensive error messages
+The Clojure compiler throws errors that are hard to understand. Note, this will be improved soon when all functions in Clojure.core will be specified with clojure.spec
